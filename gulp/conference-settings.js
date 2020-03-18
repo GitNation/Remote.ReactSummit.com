@@ -1,4 +1,4 @@
-const conferenceTitle = 'React_Amsterdam';
+const conferenceTitle = 'React_Summit_Online';
 const eventYear = 'Y2020';
 
 const tagColors = {
