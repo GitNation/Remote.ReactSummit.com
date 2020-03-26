@@ -218,11 +218,22 @@
 
 
 .mc
+	position: relative
 	padding: 102px 0 122px
 	background-position: center top
 	background-repeat: repeat
 	background-image: url(../img/bg-net.svg)
 	border-bottom: 2px solid #1d201e
+
+	&:after
+		content: ''
+		position: absolute
+		left: 0
+		right: 0
+		bottom: -8px
+		height: 15px
+		background-image: url(../img/bg-dash.svg)
+
 	+xs
 		padding: 37px 0 55px
 		//margin-top: 20px
