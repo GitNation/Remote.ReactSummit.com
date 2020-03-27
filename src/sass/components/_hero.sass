@@ -11,24 +11,24 @@
 	background-position: center
 	background-size: cover
 	//background-image: url(../img/hero-overlay.png)
-	background-color: rgba(0, 0, 0, 0.2)
+	background-color: #1e2220
 	z-index: 1
-	+r(899)
-		background-image: url(../img/dummy_bg.jpg)
+	pointer-events: none
+
 	&:after
 		content: ''
 		+coverdiv
 		z-index: 1
 		background-color: #000
-		opacity: 0.4
-	&:before
-		content: ''
-		+coverdiv
-		z-index: 1
-		background-image: url(../img/hero-overlay.png)
-		background-position: center
-		background-repeat: no-repeat
-		background-size: cover
+		opacity: 0.35
+	// &:before
+	// 	content: ''
+	// 	+coverdiv
+	// 	z-index: 1
+	// 	background-image: url(../img/hero-overlay.png)
+	// 	background-position: center
+	// 	background-repeat: no-repeat
+	// 	background-size: cover
 	+tablet
 		padding: 45px 0 105px
 	+md
@@ -53,12 +53,26 @@
 		+r(899)
 			display: none
 
+	&__bg
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		min-width: 100%
+		min-height: 100%
+		width: auto
+		height: auto
+		z-index: -1
+		// background: url(../img/screens-done-op.svg) center center no-repeat
+		background-size: cover
+
 	&__inner
 		width: 1566px
 		//margin: 0 auto
 		padding: 0 40px
 		position: relative
 		z-index: 2
+		pointer-events: none
 		+r(1460)
 			padding: 0 80px
 		+r(1279)
@@ -67,10 +81,11 @@
 			padding: 0 20px
 		+xs
 			padding: 0 15px
+
 	&__logo
 		width: 184px
 		//height: 101px
-		margin: 0 auto 96px
+		margin: 0 auto 78px
 		+tablet
 			margin: 0 auto 36px
 			width: 154px
@@ -84,25 +99,25 @@
 			width: 140px
 			height: auto
 	&__suptitle
-		font-size: 16px
-		margin-bottom: 56px
+		font-size: 18px
+		margin-bottom: 28px
 		text-align: center
 		+tablet
 			font-size: 18px
 			margin-bottom: 10px
 		+md
-			margin-bottom: 26px
+			margin-bottom: 28px
 		+xs
 			font-size: 15px
 			margin: 0 -10px 13px
 	&__title
 		font-size: 64px
-		line-height: 1.16
+		line-height: 1.1
 		text-align: center
-		margin-bottom: 86px
+		margin-bottom: 44px
 		+medium
 		+laptop
-			font-size: 72px
+			font-size: 70px
 
 		+tablet
 			//font-size: 6.5vw
@@ -133,12 +148,17 @@
 		display: flex
 		justify-content: center
 
+		.btn
+			pointer-events: auto
+
 	&__partner
 		position: absolute
 		right: 10px
 		top: 0
 		font-size: 11px
 		line-height: 1.4
+		pointer-events: auto
+
 		+tablet
 			font-size: 14px
 			right: 20px
@@ -160,11 +180,23 @@
 
 		img
 			width: 100%
+	&__timer
+		position: absolute
+		padding: 0 4vw
+		right: 0
+		left: 0
+		bottom: 1vw
+		font-size: 15vw
+		font-weight: 600
+		color: #cf0
+		opacity: .2
+		line-height: 1
+
 .h-list
 	display: flex
 	justify-content: space-between
 	max-width: 1100px
-	margin: 0 auto 96px
+	margin: 0 auto 124px
 	padding-left: 100px
 
 	&_min
@@ -228,6 +260,12 @@
 			margin-bottom: 0
 			font-size: 48px
 			line-height: 1.1
+
+		.icon-infinity
+			width: 71px
+			height: 60px
+			fill: #FFF
+
 	&__text
 		font-size: 14px
 		line-height: 1.4
@@ -274,6 +312,97 @@
 	display: block
 	//height: 100%
 	width: 100%
+	pointer-events: auto
 	img
 		//height: 100%
 		width: 100%
+
+.screens
+	position: absolute
+	width: calc(4 * ((100vh / 3) * 1.8))
+	left: 50%
+	transform: translate(-50%)
+	top: 0
+	bottom: 0
+	flex-wrap: wrap
+	justify-content: center
+	align-content: flex-start
+	align-items: flex-start
+	z-index: -1
+	text-align: center
+	display: flex
+	--screenHeigth: calc(100vh / 3 - 10px)
+	--screenWidth: calc((100vh / 3 - 10px) * 1.8)
+
+	&__item
+		position: relative
+		flex: 0 0 auto
+		width: 538px
+		height: 300px
+		width: 33vw
+		height: var(--screenHeigth)
+		width: var(--screenWidth)
+		background: #090a09
+		margin: 5px
+		border-radius: 10px
+		display: flex
+		overflow: hidden
+		pointer-events: auto
+
+		&:hover
+			.screens__img
+				opacity: 1
+
+		// &:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			opacity: 1
+			background-color: #090a09
+			transition: opacity ease 0.2s
+
+
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			background: url(../img/screens-over.svg) center center no-repeat
+			background-size: cover
+			z-index: 2
+
+	&__overlay
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		background: #0d0e0d
+		opacity: 1
+
+		.icon
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			height: 22vh
+			width: 20vh
+			fill: #2c302d
+
+			&.face_4
+				height: 25vh
+				width: 24vh
+
+	&__img
+		width: 100%
+		height: 100%
+		display: block
+		object-fit: cover
+		opacity: 0
+		z-index: 1
+		transition: opacity ease 0.2s

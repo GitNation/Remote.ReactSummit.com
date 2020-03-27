@@ -2,6 +2,7 @@ import highlightContent from '@focus-reactive/inline-edit';
 import { contentTypeMap } from '@focus-reactive/graphql-content-layer/dist/content-type-map';
 import './components/tabs';
 import './components/header';
+import countdown from './components/countdown';
 import svg4everybody from 'svg4everybody';
 import msieversion from './components/detectIE';
 import slider from './components/_slider';
@@ -32,6 +33,8 @@ if (isIE !== 'otherbrowser') {
 if ($('.js-slider')) {
   slider();
 }
+
+countdown();
 
 highlightContent({ contentTypeMap });
 

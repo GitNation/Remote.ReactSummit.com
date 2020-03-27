@@ -16,12 +16,16 @@ sponsorsDescription: true
 	{% if pages[pageKey].pageSections.event %}
 		{% include "partials/_event.html" %}
 	{% endif %}
+	{% if pages[pageKey].pageSections.event %}
+		{% include "partials/_features.html" %}
+	{% endif %}
+	<div class="separator"></div>
 	{% if pages[pageKey].pageSections.speakers %}
 		{% include "partials/_speakers.html" %}
 	{% endif %}
 	{% if pages[pageKey].pageSections.advicers %}
 		{# {% include "partials/_advicers.html" %} #}
-	{% endif %}
+	{% endif %}	
 	{% if pages[pageKey].pageSections.MCs %}
 		{% include "partials/_MCs.html" %}
 	{% endif %}
