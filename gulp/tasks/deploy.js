@@ -9,14 +9,12 @@ gulp.task('deploy', function() {
 
   /* TODO: add credentials for online conference  */
 
-  return;
-
   var conn = ftp.create({
-    // host: 'gold.elastictech.org',
-    // user: args.user,
-    // password: args.password,
-    // log: gutil.log,
-    // parallel: 2,
+    host: 'gold.elastictech.org',
+    user: args.user,
+    password: args.password,
+    log: gutil.log,
+    parallel: 2,
   });
 
   // Always deploy HTML
