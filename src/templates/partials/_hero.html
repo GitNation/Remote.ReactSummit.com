@@ -47,47 +47,47 @@
 		</div>
 	</div>
 
-  <div class="hero__inner graphcms-container" {{ mixins.cmsData(pages[pageKey]) }}>
-    <div class="hero__logo">
-      <a href="/" class="logo"><img src="img/logo-summit-online.svg" alt="React Summit Online"></a>
-    </div>
-    <div class="hero__suptitle">New date: September 11, 2020, Kromhouthal, Amsterdam</div>
-    <h1 class="hero__title">THE BIGGEST REACT CONFERENCE WORLDWIDE</h1>
-    <div class="hero__info">
-      <ul class="h-list">
-        <li class="h-list__item">
-          <div class="h-list__value">{{ pages.main.pageStatistics.tracks }}</div>
-          <div class="h-list__text">
-            <span class="h-list__text-top">Tracks</span>
-            <br>
-            {{ pages.main.pageStatistics.tracksTitle }}
-          </div>
-        </li>
-        <li class="h-list__item">
-          <div class="h-list__value">{{ pages.main.pageStatistics.speakers }}</div>
-          <div class="h-list__text">
-            <span class="h-list__text-top">Speakers</span>
-            <br>
-            {{ pages.main.pageStatistics.speakersTitle }}
-          </div>
-        </li>
+	<div class="hero__inner graphcms-container" {{ mixins.cmsData(pages[pageKey]) }}>
+		<div class="hero__logo">
+			<a href="/" class="logo"><img src="img/logo-summit-online.svg" alt="React Summit Online"></a>
+		</div>
+		<div class="hero__suptitle">{{ pagesPieceOfTexts.hero__date }}</div>
+		<h1 class="hero__title">{{ pagesPieceOfTexts.hero__title | safe }}</h1>
+		<div class="hero__info">
+			<ul class="h-list">
+				<li class="h-list__item">
+					<div class="h-list__value">{{ pages.main.pageStatistics.tracks }}</div>
+					<div class="h-list__text">
+						<span class="h-list__text-top">Tracks</span>
+						<br>
+						{{ pages.main.pageStatistics.tracksTitle }}
+					</div>
+				</li>
+				<li class="h-list__item">
+					<div class="h-list__value">{{ pages.main.pageStatistics.speakers }}</div>
+					<div class="h-list__text">
+						<span class="h-list__text-top">Speakers</span>
+						<br>
+						{{ pages.main.pageStatistics.speakersTitle }}
+					</div>
+				</li>
 
-        <li class="h-list__item">
-          <div class="h-list__value">{{mixins.icon('infinity')}}</div>
-          <div class="h-list__text">
-            <span class="h-list__text-top">React devs</span>
-            <br>
-            {{ pages.main.pageStatistics.visitorsTitle }}
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="hero__btn">
-      <a href="{{ pages.main.pageStatistics.heroCTA.link }}" class="btn btn--gradient" target="_blank">{{ pages.main.pageStatistics.heroCTA.text }}</a>
-    </div>
-    <div class="hero__partner">
-      In collaboration with
-      <a href="https://focusreactive.com/" class="hero__partner-img" target="_blank"><img src="img/sponsors/fr-text.png" alt="FocusReactive" /></a>
-    </div>
-  </div>
+				<li class="h-list__item">
+					<div class="h-list__value">{{mixins.icon('infinity')}}</div>
+					<div class="h-list__text">
+						<span class="h-list__text-top">React devs</span>
+						<br>
+						{{ pages.main.pageStatistics.visitorsTitle }}
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="hero__btn">
+			<a href="{{ pages.main.pageStatistics.heroCTA.link }}" class="btn btn--gradient" target="_blank">{{ pages.main.pageStatistics.heroCTA.text }}</a>
+		</div>
+		<div class="hero__partner">
+			In collaboration with
+			<a href="https://focusreactive.com/" class="hero__partner-img" target="_blank"><img src="img/sponsors/fr-text.png" alt="FocusReactive" /></a>
+		</div>
+	</div>
 </div>
