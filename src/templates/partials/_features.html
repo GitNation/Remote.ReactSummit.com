@@ -1,21 +1,15 @@
 <section class="section features" id="features">
 		<h3 class="section__title graphcms-container">
-				{{ mixins.text(pieceOfTexts, 'event__title') }}
+			{{ mixins.text(pieceOfTexts, 'features__title') }}
 		</h3>
 		
 		<div class="features-block">
+			{% for feature in pages[pageKey].pageStatistics.features %}
 			<div class="features-block__item">
-				<h3 class="features-block__title">TOP REACT SPEAKERS</h3>
-				<p class="features-block__desc">Talks & QA sessions</p>
+				<h3 class="features-block__title">{{ feature.title }}</h3>
+				<p class="features-block__desc">{{ feature.desc }}</p>
 				<div class="features-block__back">
-					<img class="features-block__back-pic" src="./img/feature-pic_1.jpg">
-				</div>
-			</div>
-
-			<div class="features-block__item">
-				<h3 class="features-block__title">NET-WORKING</h3>
-				<p class="features-block__desc">Live rooms to chat and make new friends</p>
-				<div class="features-block__back">
+					{% if feature.networkers %}
 					<div class="networkers">
 						{% for person in speakers[pageKey] %}
 						<div class="networkers__item">
@@ -24,16 +18,13 @@
 						</div>
 						{% endfor %}
 					</div>
+					{% endif %}
+					{% if feature.bgImg %}
+					<img class="features-block__back-pic" src="{{ feature.bgImg }}">
+					{% endif %}
 				</div>
 			</div>
-
-			<div class="features-block__item">
-				<h3 class="features-block__title">REMOTE, SAFE YET FUN</h3>
-				<p class="features-block__desc">QuakeJS and chess battles with prizes</p>
-				<div class="features-block__back">
-					<img class="features-block__back-pic" src="./img/feature-pic_2.jpg">
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 
 		<div class="container">
