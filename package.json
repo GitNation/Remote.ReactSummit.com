@@ -2,7 +2,7 @@
   "name": "react-summit",
   "version": "0.2.0",
   "scripts": {
-    "build": "gulp build --production",
+    "build": "gulp build --production && ls -laR ./build",
     "start": "gulp",
     "test:build": "gulp test",
     "test:build-update": "gulp test -u",

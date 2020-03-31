@@ -3,91 +3,65 @@
 	<div class="hero__timer" id="countdown">23:16:54:07</div>
 
 	<div class="screens">
+		{% for screen in pages.main.pageStatistics.heroScreens %}
 		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_1')}}</div>
+			<div class="screens__overlay">
+				<svg class="icon icon-{{ screen.iconFace }}">
+					<use xlink:href="img/sprite.svg#icon-{{ screen.iconFace }}"></use>
+				</svg>
+			</div>
+			{% if screen.speakerIndex %}
+			<img class="screens__img" src="{{speakers[pageKey][screen.speakerIndex].avatar}}">
+			{% endif %}
 		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_2')}}</div>
-			<img class="screens__img" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:500,width:500/8HarhhMS6OPV6qWV9VIY">
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_3')}}</div>
-			<img class="screens__img" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:500,width:500/RcjDp3FuRHujJyQFbi2w">
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_4')}}</div>
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_5')}}</div>
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_6')}}</div>
-			<img class="screens__img" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:500,width:500/xeuIl3btSeSmIz5XryAs">
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_7')}}</div>
-			<img class="screens__img" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:500,width:500/41nhsVJQSp2WDf5qE0Gp">
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_8')}}</div>
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_9')}}</div>
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_10')}}</div>
-			<img class="screens__img" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:500,width:500/Af1WSj6qSJO8XDU17V9W">
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_11')}}</div>
-			<img class="screens__img" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:500,width:500/Vyg1gClQo2gXozJnZHXY">
-		</div>
-		<div class="screens__item">
-			<div class="screens__overlay">{{mixins.icon('face_12')}}</div>
-		</div>
+		{% endfor %}
 	</div>
 
-  <div class="hero__inner graphcms-container" {{ mixins.cmsData(pages[pageKey]) }}>
-    <div class="hero__logo">
-      <a href="/" class="logo"><img src="img/logo-summit-online.svg" alt="React Summit Online"></a>
-    </div>
-    <div class="hero__suptitle">New date: September 11, 2020, Kromhouthal, Amsterdam</div>
-    <h1 class="hero__title">THE BIGGEST REACT CONFERENCE WORLDWIDE</h1>
-    <div class="hero__info">
-      <ul class="h-list">
-        <li class="h-list__item">
-          <div class="h-list__value">{{ pages.main.pageStatistics.tracks }}</div>
-          <div class="h-list__text">
-            <span class="h-list__text-top">Tracks</span>
-            <br>
-            {{ pages.main.pageStatistics.tracksTitle }}
-          </div>
-        </li>
-        <li class="h-list__item">
-          <div class="h-list__value">{{ pages.main.pageStatistics.speakers }}</div>
-          <div class="h-list__text">
-            <span class="h-list__text-top">Speakers</span>
-            <br>
-            {{ pages.main.pageStatistics.speakersTitle }}
-          </div>
-        </li>
+	<div class="hero__inner graphcms-container" {{ mixins.cmsData(pages[pageKey]) }}>
+		<div class="hero__logo">
+			<a href="/" class="logo"><img src="img/logo-summit-online.svg" alt="React Summit Online"></a>
+		</div>
+		<div class="hero__suptitle">{{ pagesPieceOfTexts.hero__date }}</div>
+		<h1 class="hero__title">{{ pagesPieceOfTexts.hero__title | safe }}</h1>
+		<div class="hero__info">
+			<ul class="h-list">
+				<li class="h-list__item">
+					<div class="h-list__value">{{ pages.main.pageStatistics.tracks }}</div>
+					<div class="h-list__text">
+						<span class="h-list__text-top">Tracks</span>
+						<br>
+						{{ pages.main.pageStatistics.tracksTitle }}
+					</div>
+				</li>
+				<li class="h-list__item">
+					<div class="h-list__value">{{ pages.main.pageStatistics.speakers }}</div>
+					<div class="h-list__text">
+						<span class="h-list__text-top">Speakers</span>
+						<br>
+						{{ pages.main.pageStatistics.speakersTitle }}
+					</div>
+				</li>
 
-        <li class="h-list__item">
-          <div class="h-list__value">{{mixins.icon('infinity')}}</div>
-          <div class="h-list__text">
-            <span class="h-list__text-top">React devs</span>
-            <br>
-            {{ pages.main.pageStatistics.visitorsTitle }}
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="hero__btn">
-      <a href="{{ pages.main.pageStatistics.heroCTA.link }}" class="btn btn--gradient" target="_blank">{{ pages.main.pageStatistics.heroCTA.text }}</a>
-    </div>
-    <div class="hero__partner">
-      In collaboration with
-      <a href="https://focusreactive.com/" class="hero__partner-img" target="_blank"><img src="img/sponsors/fr-text.png" alt="FocusReactive" /></a>
-    </div>
-  </div>
+				<li class="h-list__item">
+					<div class="h-list__value">{{mixins.icon('infinity')}}</div>
+					<div class="h-list__text">
+						<span class="h-list__text-top">React devs</span>
+						<br>
+						{{ pages.main.pageStatistics.visitorsTitle }}
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="hero__btn">
+			<a href="{{ pages.main.pageStatistics.heroCTA.link }}" class="btn btn--gradient" target="_blank">{{ pages.main.pageStatistics.heroCTA.text }}</a>
+
+			{% if pages.main.pageStatistics.heroOptIn %}
+			<a href="{{ pages.main.pageStatistics.heroOptIn.link }}" class="btn btn--border" target="_blank">{{ pages.main.pageStatistics.heroOptIn.text }}</a>
+			{% endif %}
+		</div>
+		<div class="hero__partner">
+			In collaboration with
+			<a href="https://focusreactive.com/" class="hero__partner-img" target="_blank"><img src="img/sponsors/fr-text.png" alt="FocusReactive" /></a>
+		</div>
+	</div>
 </div>
