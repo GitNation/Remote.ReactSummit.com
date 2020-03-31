@@ -1,4 +1,5 @@
 <section class="section features" id="features">
+	<div class="container">
 		<h3 class="section__title graphcms-container">
 			{{ mixins.text(pieceOfTexts, 'features__title') }}
 		</h3>
@@ -14,7 +15,7 @@
 						{% for person in speakers[pageKey] %}
 						<div class="networkers__item">
 							<img class="networkers__speaker" src="{{person.avatar}}"/>
-							<p class="networkers__time">12:30</p>
+							<p class="networkers__time">{{person.time}}</p>
 						</div>
 						{% endfor %}
 					</div>
@@ -32,4 +33,5 @@
 				<a href="" class="btn btn--gradient">More details</a>
 			</div>
 		</div>
+	</div>
 </section>
