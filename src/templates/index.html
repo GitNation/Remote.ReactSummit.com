@@ -32,9 +32,6 @@ sponsorsDescription: true
 		{% if pages[pageKey].pageSections.MCs %}
 			{% include "partials/_MCs.html" %}
 		{% endif %}
-		{% if pages[pageKey].pageSections.hosts %}
-			{% include "partials/_hosts.html" %}
-		{% endif %}
 		{% if pages[pageKey].pageSections.evening %}
 			{# {% include "partials/_evening-programme.html" %} #}
 		{% endif %}
@@ -46,6 +43,9 @@ sponsorsDescription: true
 		{% endif %}
 		{% if pages[pageKey].pageSections.extended %}
 			{% include "partials/_extended-program.html" %}
+		{% endif %}
+		{% if pages[pageKey].pageSections.hosts %}
+			{% include "partials/_hosts.html" %}
 		{% endif %}
 		{% if pages[pageKey].pageSections.media %}
 			{% include "partials/_media.html" %}
