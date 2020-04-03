@@ -329,34 +329,38 @@
 		//height: 100%
 		width: 100%
 
-.screens
+.screens-wrap
 	position: absolute
-	width: calc(4 * ((100vh / 3) * 1.8))
-	left: 50%
-	transform: translate(-50%)
 	top: 0
 	bottom: 0
-	flex-wrap: wrap
-	justify-content: center
-	align-content: flex-start
-	align-items: flex-start
+
+	&__ratio
+		display: block
+		height: 100%
+		width: auto
+		visibility: hidden
+
+		img
+			height: 100%
+			width: auto
+
+.screens
+	position: absolute
+	left: 0
+	width: 100%
+	top: 0
+	bottom: 0
 	z-index: -1
 	text-align: center
-	display: flex
-	--screenHeigth: calc(100vh / 3 - 10px)
-	--screenWidth: calc((100vh / 3 - 10px) * 1.8)
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr 1fr
+	grid-template-rows: 1fr 1fr 1fr
+	background: #151816
 
 	&__item
 		position: relative
-		flex: 0 0 auto
-		width: 538px
-		height: 300px
-		width: 33vw
-		height: var(--screenHeigth)
-		width: var(--screenWidth)
-		background: #090a09
-		margin: 5px
-		border-radius: 10px
+		// background: #090a09
+		padding: 5px
 		display: flex
 		overflow: hidden
 		pointer-events: auto
@@ -368,13 +372,15 @@
 		// &:before
 			content: ''
 			position: absolute
-			left: 0
-			top: 0
-			right: 0
-			bottom: 0
+			left: 5px
+			top: 5px
+			right: 5px
+			bottom: 5px
 			opacity: 1
-			background-color: #090a09
+			background-color: #f00
 			transition: opacity ease 0.2s
+			z-index: 1
+			border-radius: 10px
 
 
 		&:after
@@ -390,11 +396,12 @@
 
 	&__overlay
 		position: absolute
-		left: 0
-		top: 0
-		right: 0
-		bottom: 0
+		left: 5px
+		top: 5px
+		right: 5px
+		bottom: 5px
 		background: #0d0e0d
+		border-radius: 10px
 		opacity: 1
 
 		.icon
@@ -402,13 +409,11 @@
 			left: 50%
 			top: 50%
 			transform: translate(-50%, -50%)
-			height: 22vh
-			width: 20vh
+			height: 69%
+			width: 50%
 			fill: #2c302d
 
 			&.face_4
-				height: 25vh
-				width: 24vh
 
 	&__img
 		width: 100%
@@ -418,3 +423,4 @@
 		opacity: 0
 		z-index: 1
 		transition: opacity ease 0.2s
+		border-radius: 10px
