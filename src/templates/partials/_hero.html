@@ -2,19 +2,25 @@
 	<div class="hero__bg"></div>
 	<div class="hero__timer" id="countdown">23:16:54:07</div>
 
-	<div class="screens">
-		{% for screen in pages.main.pageStatistics.heroScreens %}
-		<div class="screens__item">
-			<div class="screens__overlay">
-				<svg class="icon icon-{{ screen.iconFace }}">
-					<use xlink:href="img/sprite.svg#icon-{{ screen.iconFace }}"></use>
-				</svg>
+	<div class="screens-wrap">
+		<picture class="screens-wrap__ratio">
+			<source media="(min-width: 650px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAaAQAAAAAssGnKAAAAD0lEQVR4AWP4DwE/hj0DAGarznuVhA4/AAAAAElFTkSuQmCC">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQAAAACBiqPTAAAAC0lEQVR4AWP8AIEADxwDxVKwsm0AAAAASUVORK5CYII=">
+		</picture>
+		<div class="screens">
+			{% for screen in pages.main.pageStatistics.heroScreens %}
+			<div class="screens__item">
+				<div class="screens__overlay">
+					<svg class="icon icon-{{ screen.iconFace }}">
+						<use xlink:href="img/sprite.svg#icon-{{ screen.iconFace }}"></use>
+					</svg>
+				</div>
+				{% if screen.speakerIndex %}
+				<img class="screens__img" src="{{speakers[pageKey][screen.speakerIndex].avatar}}">
+				{% endif %}
 			</div>
-			{% if screen.speakerIndex %}
-			<img class="screens__img" src="{{speakers[pageKey][screen.speakerIndex].avatar}}">
-			{% endif %}
+			{% endfor %}
 		</div>
-		{% endfor %}
 	</div>
 
 	<div class="hero__inner graphcms-container" {{ mixins.cmsData(pages[pageKey]) }}>
