@@ -59,7 +59,7 @@
 											{% endif %}
 											{% if talk.lightningTalks %}
 												{% for item in talk.lightningTalks %}
-													<div class="s-item__title s-item__title_sm">{{ item.title }}</div>
+													<div class="s-item__title s-item__title_sm">{{ item.title }} - {{ item.name }}</div>
 													<div class="s-item__text">{{ item.text | safe }}</div>
 												{% endfor %}
 											{% endif %}
