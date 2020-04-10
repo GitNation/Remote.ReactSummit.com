@@ -7,6 +7,7 @@ import svg4everybody from 'svg4everybody';
 import msieversion from './components/detectIE';
 import slider from './components/_slider';
 import './components/_faq';
+import './components/_timeTrack';
 import noTouch from './components/noTouch';
 
 noTouch();

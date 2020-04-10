@@ -1,0 +1,23 @@
+<section class="section" id="video-rooms">
+	<div class="container">
+		<h3 class="section__title">Discussion Video Rooms</h3>
+		<h4 class="section__subtitle">Join on to video rooms focused on a specific technology. Hangout with peeps on the same page</h4>
+
+		<div class="video-rooms">
+			{% for item in pages[pageKey].pageSections.videoRooms %}
+			<div class="video-rooms__item">
+				<a class="video-rooms__link" href="{{ item.link }}"></a>
+				
+				<div class="video-rooms__img-wrap">
+					<img class="video-rooms__img" src="{{ item.pic }}">
+				</div>
+				<div class="video-rooms__user">
+					<img class="video-rooms__avatar" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:48,width:48/{{ item.avatar }}">
+					<p class="video-rooms__name">{{ item.name }}</p>
+				</div>
+				<div class="video-rooms__btn">{{ item.linkText }}</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

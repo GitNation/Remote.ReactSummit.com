@@ -1,0 +1,89 @@
+<div class="live-programm js-tabs-container">
+	<div class="live-programm__tab-links">
+		<div class="container">
+			{% for item in pages[pageKey].pageSections.timeTrack %}
+			<div href="#" class="live-programm__tab js-tab-link {% if item.active %}is-active{% endif %}" data-tab="{{loop.index}}">
+				{{item.tab}}
+				<a href="{{item.link}}" class="live-programm__tab-link">{{mixins.icon('sl')}} Slack<span> channel</span></a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="container">
+		{% for item in pages[pageKey].pageSections.timeTrack %}
+		<div class="broadcast js-tab {% if item.active %}is-active{% endif %}" data-tab="{{loop.index}}">{{ item.name }}</div>
+		{% endfor %}
+	</div>
+
+	<div class="container">
+		<div class="time-track">
+			<div class="time-track__aside">
+				{% for item in pages[pageKey].pageSections.timeTrack %}
+				<div class="time-track__track">
+					<div class="time-track__track-title">{{ item.title }}</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			<div class="time-track__content">
+				<div class="time-track__current-time-track" id="js-current-time-track">
+					<div class="time-track__current-time" id="js-current-time"></div>
+				</div>
+				<div class="time-track__head">
+					<div class="time-track__track-title"></div>
+					<div class="time-track__head-item">14:00</div>
+					<div class="time-track__head-item">14:15</div>
+					<div class="time-track__head-item">14:30</div>
+					<div class="time-track__head-item">14:45</div>
+					<div class="time-track__head-item">15:00</div>
+					<div class="time-track__head-item">15:15</div>
+					<div class="time-track__head-item">15:30</div>
+					<div class="time-track__head-item">15:45</div>
+					<div class="time-track__head-item">16:00</div>
+					<div class="time-track__head-item">16:15</div>
+					<div class="time-track__head-item">16:30</div>
+					<div class="time-track__head-item">16:45</div>
+					<div class="time-track__head-item">17:00</div>
+					<div class="time-track__head-item">17:15</div>
+					<div class="time-track__head-item">17:30</div>
+					<div class="time-track__head-item">17:45</div>
+					<div class="time-track__head-item">18:00</div>
+					<div class="time-track__head-item">18:15</div>
+					<div class="time-track__head-item">18:30</div>
+					<div class="time-track__head-item">18:45</div>
+					<div class="time-track__head-item">19:00</div>
+					<div class="time-track__head-item">19:15</div>
+					<div class="time-track__head-item">19:30</div>
+					<div class="time-track__head-item">19:45</div>
+					<div class="time-track__head-item">20:00</div>
+					<div class="time-track__head-item">20:15</div>
+					<div class="time-track__head-item">20:30</div>
+					<div class="time-track__head-item">20:45</div>
+					<div class="time-track__head-item">21:00</div>
+				</div>
+
+				<div class="time-track__timeline">
+					{% for item in pages[pageKey].pageSections.timeTrack %}
+					<div class="time-track__track">
+
+						{% for talk in item.list %}
+						<div class="time-track__item js-time" data-time="{{ talk.time }}" style="--duration: {{ talk.duration }}; --bgColor: {{ talk.bgColor }}">
+							<div class="time-track__pic">
+								<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:36,width:36/{{ talk.pic }}">
+							</div>
+							<div class="time-track__speaker">{{ talk.name }}</div>
+
+							{% if talk.qaLink %}
+							<a href="{{ talk.qaLink }}" class="time-track__qa">Q&A {{mixins.icon('sl')}}</a>
+							{% endif %}
+						</div>
+
+						{% endfor %}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

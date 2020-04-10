@@ -1,0 +1,51 @@
+---
+
+pageKey: main
+
+headerBtn: true
+
+sponsorsDescription: true
+
+---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{% include "partials/_header.html" %}
+
+	<div class="main js-main">
+		{% include "partials/_hero-live.html" %}
+
+		{% include "partials/_time-track.html" %}
+
+		{% if pages[pageKey].pageSections.speakers %}
+			{% include "partials/_speakers.html" %}
+		{% endif %}
+
+		{% include "partials/_full-ticket.html" %}
+
+		{% include "partials/_interactive-sessions.html" %}
+
+		{% include "partials/_video-rooms.html" %}
+
+		{% include "partials/_random-party.html" %}
+
+		{% include "partials/_zoom-bars.html" %}
+
+
+		{% if pages[pageKey].pageSections.contact %}
+			{% include "partials/_contact-form.html" %}
+		{% endif %}
+		{% if pages[pageKey].pageSections.back %}
+			{% include "partials/_back-to-community.html" %}
+		{% endif %}
+		{% if pages[pageKey].pageSections.sponsors %}
+			{% include "partials/_sponsors.html" %}
+		{% endif %}
+		<div class="separator"></div>
+		{% include "partials/_footer.html" %}
+	</div>
+
+{% endblock %}
+
