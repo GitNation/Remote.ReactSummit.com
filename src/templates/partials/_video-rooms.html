@@ -1,7 +1,7 @@
 <section class="section" id="video-rooms">
 	<div class="container">
-		<h3 class="section__title">Discussion Video Rooms</h3>
-		<h4 class="section__subtitle">Join on to video rooms focused on a specific technology. Hangout with peeps on the same page</h4>
+		<h3 class="section__title">{{ mixins.text(pieceOfTexts, 'videorooms__title') }}</h3>
+		<h4 class="section__subtitle">{{ mixins.text(pieceOfTexts, 'videorooms__subtitle') }}</h4>
 
 		<div class="video-rooms">
 			{% for item in pages[pageKey].pageSections.videoRooms %}
