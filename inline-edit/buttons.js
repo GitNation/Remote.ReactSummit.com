@@ -8,6 +8,7 @@ const createEntryURL = ({ id, contentTypeId }) => {
 
 const getContentTypeName = contentTypeMap => contentTypeId => {
   const type = Object.entries(contentTypeMap).find(
+    // eslint-disable-next-line no-unused-vars
     ([_, id]) => id === contentTypeId
   );
   if (!type) return 'unknown';
