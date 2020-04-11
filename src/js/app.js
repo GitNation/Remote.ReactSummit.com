@@ -6,6 +6,7 @@ import countdown from './components/countdown';
 import svg4everybody from 'svg4everybody';
 import msieversion from './components/detectIE';
 import slider from './components/_slider';
+import fancypop from './components/_fancybox';
 import './components/_faq';
 import './components/_timeTrack';
 import noTouch from './components/noTouch';
@@ -35,6 +36,7 @@ if ($('.js-slider')) {
   slider();
 }
 
+fancypop();
 countdown();
 
 highlightContent({ contentTypeMap });

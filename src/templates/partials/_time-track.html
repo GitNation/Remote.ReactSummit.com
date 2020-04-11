@@ -45,7 +45,7 @@
 								<div class="time-track__speaker">{{ talk.name }}</div>
 
 								{% if talk.qaLink %}
-								<a href="{{ talk.qaLink }}" class="time-track__qa">Q&A {{mixins.icon('sl')}}</a>
+								<a href="{{ talk.qaLink }}" data-qa-duration="{{ talk.qaDuration }}" data-fancybox data-src="#popup-ticket" class="time-track__qa js-qa-item">Q&A {{mixins.icon('sl')}}</a>
 								{% endif %}
 							</div>
 

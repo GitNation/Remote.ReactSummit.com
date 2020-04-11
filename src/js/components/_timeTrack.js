@@ -10,6 +10,7 @@ var confDurationInHours = confDurationInMin / 60;
 var timelineWidth = confDurationInMin * pxPerMinute;
 var timeline = document.getElementById('js-timeline');
 var trackItems = document.getElementsByClassName('js-time');
+var qaItems = document.getElementsByClassName('js-qa-item');
 var currentTimeElem = document.getElementById('js-current-time');
 var trackHead = document.getElementById('js-track-head');
 var splittedStartTime = startTime.split(':');
@@ -47,6 +48,8 @@ function setTimeLinePosition() {
 }
 
 if (currentTimeElem) {
+
+  // Create head timeline
   for ( var i = 0; i < confDurationInHours; i++ ) {
     var hours = splittedStartTime[0];
     hours = parseInt(hours) + i;
@@ -66,6 +69,7 @@ if (currentTimeElem) {
   trackHead.innerHTML = trackLines;
   timeline.style.width = timelineWidth + 52 + 'px';
 
+  // Set width and position of talks
   for(var i=0; i< trackItems.length; i++) {
     var minutes;
     var duration;
@@ -79,6 +83,13 @@ if (currentTimeElem) {
     itemWidth = duration * pxPerMinute - 1 + 'px';
     trackItems[i].style.width = itemWidth;
     trackItems[i].style.left = itemPosLeft;
+  }
+
+  // Set width of QAs
+  for(var i=0; i< qaItems.length; i++) {
+  	var qaItemDutaion = parseInt(qaItems[i].dataset.qaDuration);
+    var qaItemWidth = qaItemDutaion * pxPerMinute;
+    qaItems[i].style.width = qaItemWidth + 'px';
   }
 
   var currentTime = getTime();

@@ -74,13 +74,17 @@
 		+sm
 			font-size: 14px
 
+		&:hover
+			color: $themeColor
+
 
 		.icon
 			fill: #5f5f5f
 			width: 14px
 			height: 14px
 			position: relative
-			top: 1px
+			top: 0px
+			margin: 0 5px 0 0
 
 
 		&.is-active
@@ -107,6 +111,12 @@
 		font-weight: 500
 		color: #5f5f5f
 		margin: 0 0 0 40px
+		height: 100%
+		display: flex
+		align-items: center
+
+		span
+			margin: 0 0 0 5px
 
 		+tablet
 			margin: 0 0 0 20px
@@ -116,6 +126,12 @@
 
 			span
 				display: none
+
+		&:hover
+			color: $themeColor
+
+			.icon
+				fill: $themeColor
 
 .broadcast
 	width: 100%
