@@ -86,11 +86,11 @@ if (currentTimeElem) {
   }
 
   // Set width of QAs
-  for(var i=0; i< qaItems.length; i++) {
-  	var qaItemDutaion = parseInt(qaItems[i].dataset.qaDuration);
-    var qaItemWidth = qaItemDutaion * pxPerMinute;
-    qaItems[i].style.width = qaItemWidth + 'px';
-  }
+  // for(var i=0; i< qaItems.length; i++) {
+  // 	var qaItemDutaion = parseInt(qaItems[i].dataset.qaDuration);
+  //   var qaItemWidth = qaItemDutaion * pxPerMinute;
+  //   qaItems[i].style.width = qaItemWidth + 'px';
+  // }
 
   var currentTime = getTime();
 
