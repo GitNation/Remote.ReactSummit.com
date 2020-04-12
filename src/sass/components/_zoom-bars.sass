@@ -14,7 +14,13 @@
 	flex-wrap: wrap
 	margin: 70px 0 50px
 
+	@media all and (max-width: 1300px)
+		margin: 70px -20px 50px
+
 	+md
+		margin: 40px -20px 30px
+
+	+sm
 		margin: 40px 0 30px
 
 	&__item
@@ -23,6 +29,25 @@
 		padding: 42px 30px 44px
 		font-size: 20px
 		overflow: hidden
+
+		@media all and (max-width: 1300px)
+			width: 33.3%
+
+		+md
+			font-size: 2vw
+
+		+sm
+			width: 50%
+			font-size: 3vw
+
+		+xs
+			width: 100%
+
+		+xs
+			font-size: 5vw
+
+		+xxs
+			font-size: 7vw
 
 		&:after
 			content: ''
@@ -59,13 +84,49 @@
 		text-align: center
 		margin: 0 0 20px
 
+		@media all and (max-width: 1300px)
+			font-size: 3.9vw
+
+		+sm
+			font-size: 6vw
+
+		+xs
+			font-size: 9vw
+
+		+xxs
+			font-size: 12vw
+
 	&__name
 		font-size: 20px
 		line-height: 1.2
 
+		+md
+			font-size: 2vw
+
+		+sm
+			font-size: 3vw
+
+		+xs
+			font-size: 5vw
+
+		+xxs
+			font-size: 7vw
+
 	&__rooms
 		display: flex
 		margin: 54px 0 0
+
+		+md
+			margin: 4vw 0 0
+
+		+sm
+			margin: 6vw 0 0
+
+		+xs
+			margin: 9vw 0 0
+			
+		+xxs
+			margin: 12vw 0 0
 
 	&__room
 		position: relative
@@ -74,8 +135,29 @@
 		overflow: hidden
 		flex: 0 0 auto
 
+		@media all and (max-width: 1300px)
+			border-width: 1vw
+
+		+sm
+			border-width: 1.5vw
+
+		+xs
+			border-width: 2.3vw
+			
+		+xxs
+			border-width: 3.5vw
+
 		&+.bars-list__room
 			margin: 0 0 0 -62px
+
+			+sm
+				margin: 0 0 0 -5vw
+
+			+xs
+				margin: 0 0 0 -10vw
+			
+			+xxs
+				margin: 0 0 0 -15vw
 
 		&:hover
 			border-color: #c7fc00
@@ -106,3 +188,19 @@
 		display: block
 		width: 175px
 		height: 175px
+
+		@media all and (max-width: 1300px)
+			width: 13.5vw
+			height: 13.5vw
+
+		+sm
+			width: 20vw
+			height: 20vw
+
+		+xs
+			width: 30vw
+			height: 30vw
+			
+		+xxs
+			width: 45vw
+			height: 45vw
