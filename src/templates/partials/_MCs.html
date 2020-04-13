@@ -1,5 +1,5 @@
 <section class="section mc">
-	<div class="container container--l">
+	<div class="container">
 		<h3 class="section__title">Our MC's</h3>
 		<div class="mc-list">
 
@@ -11,7 +11,7 @@
 						</div>
 						<div class="speaker__name">{{person.name}}</div>
 						<div class="speaker__company">{{person.company}}</div>
-						<div class="speaker__desc">{{person.desc | safe}}</div>
+						<div class="speaker__desc">{{person.bio | safe}}</div>
 						{% if person.socials %}
 							<div class="speaker__socials">
 								{% for social in person.socials %}
@@ -24,9 +24,6 @@
 					</div>
 				</div>
 			{% endfor %}
-
-
-
 		</div>
 	</div>
 </section>
