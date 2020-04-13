@@ -93,6 +93,7 @@
     "webpack-glsl-loader": "^1.0.1"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "gulp-hash": "^4.2.2",
     "gulp-hash-references": "^3.0.1",
     "js-yaml": "^3.12.1",

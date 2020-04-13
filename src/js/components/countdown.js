@@ -1,7 +1,7 @@
 export default function countdown() {
 
   // Set the date we're counting down to
-  var countDownDate = new Date('Apr 17, 2020 00:00:00').getTime();
+  var countDownDate = new Date('Apr 17, 2020 11:00:00').getTime();
 
   var leadingZero = function(n) {
     if (n < 10 && n >= 0)
