@@ -1,7 +1,7 @@
 
 var startTime = '11:00';
 var endTime = '21:00';
-var trackStepInMin = 10;
+var trackStepInMin = 5;
 var pxPerMinute = 50 / trackStepInMin;
 var startTimeInMin = timeToMinutes(startTime);
 var endTimeInMin = timeToMinutes(endTime);
