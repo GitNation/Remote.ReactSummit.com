@@ -13,6 +13,7 @@ var trackItems = document.getElementsByClassName('js-time');
 var qaItems = document.getElementsByClassName('js-qa-item');
 var currentTimeElem = document.getElementById('js-current-time');
 var trackHead = document.getElementById('js-track-head');
+var trackCurrentTime = document.getElementById('js-current-time-track');
 var splittedStartTime = startTime.split(':');
 var trackLines = '';
 
@@ -44,7 +45,12 @@ function setTimeLinePosition() {
   var minutes = timeToMinutes(currentTime);
   var minutesUpdated;
   minutesUpdated = minutes - startTimeInMin;
-  document.getElementById('js-current-time-track').style.left = (minutesUpdated * pxPerMinute) + 26 + 'px';
+  trackCurrentTime.style.left = (minutesUpdated * pxPerMinute) + 26 + 'px';
+
+  // hide if conference ended
+  if (minutes > timeToMinutes(endTime)) {
+  	trackCurrentTime.style.display = 'none';
+  }
 }
 
 if (currentTimeElem) {
