@@ -9,6 +9,7 @@ import slider from './components/_slider';
 import fancypop from './components/_fancybox';
 import './components/_faq';
 import './components/_timeTrack';
+import './components/_randomRoom';
 import noTouch from './components/noTouch';
 
 noTouch();
