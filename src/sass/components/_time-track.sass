@@ -6,6 +6,9 @@
 	position: relative
 	margin: 0 0 50px
 
+	+xs
+		margin: 0 0 20px
+
 
 	&__head
 		position: relative
@@ -31,6 +34,9 @@
 		position: relative
 		z-index: 1
 		padding: 40px 0 0
+
+		+xs
+			flex: 0 0 110px
 
 	&__content
 		flex: 1 1 auto
@@ -127,7 +133,7 @@
 			background: #181a18
 
 	&__track-title
-		min-width: 230px
+		// min-width: 230px
 		padding: 0 20px
 		text-transform: uppercase
 		position: absolute
@@ -160,7 +166,7 @@
 	&__pic
 		width: 36px
 		height: 36px
-		margin: 0 10px 0 0
+		margin: 0 5px 0 0
 		flex: 0 0 36px
 
 		img
@@ -208,6 +214,7 @@
 		font-size: 14px
 		max-height: 32px
 		width: 100%
+		margin: 0 0 0 5px
 		text-overflow: ellipsis
 		// white-space: nowrap
 		overflow: hidden

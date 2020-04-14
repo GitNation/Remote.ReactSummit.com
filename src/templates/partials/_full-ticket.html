@@ -1,6 +1,6 @@
 <section class="section full-ticket">
 	<div class="container">
-		<h3 class="section__title section__title_big">WHY BUY A FULL TICKET?</h3>
+		<h3 class="section__title section__title_big">{{ mixins.text(pieceOfTexts, 'fullaccess__title') }}</h3>
 
 		<div class="ticket-adv">
 			{% for item in pages[pageKey].pageSections.fullTicket %}
