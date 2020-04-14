@@ -1,5 +1,5 @@
 
-var startTime = '11:00';
+var startTime = '15:00';
 var endTime = '21:00';
 var trackStepInMin = 5;
 var pxPerMinute = 50 / trackStepInMin;

@@ -79,6 +79,10 @@ sponsorsDescription: true
 			{% include "partials/_zoom-bars.html" %}
 		{% endif %}
 
+		{% if pages[pageKey].pageSections.quake %}
+			{% include "partials/_info-block.html" %}
+		{% endif %}
+
 		{% if pages[pageKey].pageSections.hosts %}
 			{% include "partials/_hosts.html" %}
 		{% endif %}
