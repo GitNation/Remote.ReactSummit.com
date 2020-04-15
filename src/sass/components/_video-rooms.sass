@@ -24,17 +24,20 @@
 		align-items: center
 		transition: all ease 0.1s
 
-		&:hover
-			background: #0f100f
-
-			.video-rooms__btn
-				border-color: $themeColor
-
 		+md
 			margin: 10px 10px
 
 		+sm
 			margin: 10px 0
+
+		&.hoverable
+
+			&:hover
+				background: #0f100f
+
+				.video-rooms__btn
+					border-color: $themeColor
+			
 
 
 
@@ -56,11 +59,17 @@
 		margin:  auto
 		max-height: 100%
 
+	&__users		
+		margin: 34px auto 26px
+
 	&__user
 		display: flex
 		align-items: center
 		flex: 1 1 auto
-		margin: 34px auto 26px
+		margin: 20px auto 0
+
+		&:first-child
+			margin: 0
 
 	&__avatar
 		width: 48px
