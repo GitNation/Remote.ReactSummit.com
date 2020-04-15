@@ -59,6 +59,7 @@
 
 		+xs
 			font-size: 8.6vw
+			line-height: 1.2
 
 		&_small
 			font-size: 50px
@@ -75,10 +76,32 @@
 		z-index: 1
 		+laptop
 			font-size: 2vw
-			margin: 0 0 2.6vw
+			margin: 1.3vw 0 2.6vw
+			line-height: 1.4
 		+xs
-			margin: 0
+			margin: 5vw 0 5vw
 			font-size: 16px
+
+	&__links
+		font-size: 20px
+		position: relative
+		z-index: 1
+
+		+laptop
+			font-size: 1.8vw
+
+		+xs
+			font-size: 14px
+
+	&__link
+		color: #fff
+		text-decoration: none
+		margin: 2px 0
+		display: inline-block
+
+		&:hover
+			text-decoration: underline
+
 	
 	&__back
 		position: absolute

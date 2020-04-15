@@ -8,7 +8,16 @@
 			{% for feature in pages[pageKey].pageSections.interactiveSessions %}
 			<div class="features-block__item">
 				<h3 class="features-block__title features-block__title_small">{{ feature.title }}</h3>
-				<p class="features-block__desc">{{ feature.desc }}</p>
+				<p class="features-block__desc">{{ feature.desc | safe }}</p>
+				{% if feature.links %}
+				<div class="features-block__links">
+					{% for link in feature.links %}
+					{% if link.link %}
+					<a class="features-block__link" href="{{link.link}}">{{link.name}}</a><br/>
+					{% endif %}
+					{% endfor %}
+				</div>
+				{% endif %}
 				<div class="features-block__back">
 					{% if feature.networkers %}
 					<div class="networkers">
