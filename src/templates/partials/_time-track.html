@@ -59,6 +59,7 @@
 									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" class="time-track__qa js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
 									{% endif %}
 								{% else %}
+
 								<div class="time-track__item js-time" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" style="--bgColor: {{ talk.bgColor }}">
 									{% if talk.pic %}
 									<div class="time-track__pic">
@@ -69,6 +70,16 @@
 									<div class="time-track__speaker">{{ talk.speaker }}</div>
 									{% else %}
 									<div class="time-track__speaker">{{ talk.title }}</div>
+									{% endif %}
+
+									{% if talk.text %}
+									<div class="track-tooltip">
+										<p class="track-tooltip__speaker">{{ talk.name }}, {{ talk.place }}</p>
+										<p class="track-tooltip__title">«‎{{ talk.title }}»</p>
+										<div class="track-tooltip__desc">
+											{{ talk.text | safe }}
+										</div>
+									</div>
 									{% endif %}
 								</div>
 								{% endif %}
