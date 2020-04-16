@@ -8,7 +8,7 @@
 				{% if fakeLinks %}
 					<a href="slack-channel-link" class="live-programm__tab-link" data-fancybox data-src="#popup-ticket">{{mixins.icon('sl')}} Slack<span> channel</span></a>
 				{% else %}
-					<a href="{{item.slackLink}}" class="live-programm__tab-link" target="blank_">{{mixins.icon('sl')}} Slack<span> channel</span></a>
+					<a href="{{item.slackLink}}" class="live-programm__tab-link"  target="blank_">{{mixins.icon('sl')}} Slack<span> channel</span></a>
 				{% endif %}
 			</div>
 			{% endfor %}
@@ -80,7 +80,8 @@
 									{% if fakeLinks %}
 									<a href="qa-link" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__qa js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
 									{% else %}
-									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" class="time-track__qa js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-fancybox data-src="#popup-{{ loop.index }}" data-duration="{{ talk.duration }}" class="time-track__qa js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+                  {{ mixins.roomPopup({ id: "popup-" + loop.index, time: talk.time}, talk) }}
 									{% endif %}
 								{% else %}
 
