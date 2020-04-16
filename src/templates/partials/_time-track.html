@@ -154,14 +154,30 @@
 										<div class="time-track__speaker">{{ talk.title }}</div>
 										{% endif %}
 
-										{% if talk.text %}
-										<div class="track-tooltip">
-											<p class="track-tooltip__speaker">{{ talk.name }}, {{ talk.place }}</p>
-											<p class="track-tooltip__title">«‎{{ talk.title }}»</p>
-											<div class="track-tooltip__desc">
-												{{ talk.text | safe }}
+										{% if talk.lightningTalks %}
+											<div class="track-tooltip">
+												<p class="track-tooltip__speaker">{{ talk.title }}</p>
+
+												{% for lt in talk.lightningTalks %}
+													<div class="track-tooltip__sec">
+														<p class="track-tooltip__title">{{ lt.title }} - {{ lt.name }}</p>
+
+														<div class="track-tooltip__desc">
+															{{ lt.text | safe }}
+														</div>
+													</div>
+												{% endfor %}
 											</div>
-										</div>
+										{% else %}
+											{% if talk.text %}
+											<div class="track-tooltip">
+												<p class="track-tooltip__speaker">{{ talk.name }}, {{ talk.place }}</p>
+												<p class="track-tooltip__title">«‎{{ talk.title }}»</p>
+												<div class="track-tooltip__desc">
+													{{ talk.text | safe }}
+												</div>
+											</div>
+											{% endif %}
 										{% endif %}
 									</div>
 								{% endif %}
