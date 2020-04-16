@@ -129,7 +129,10 @@
 		align-items: center
 		min-height: 64px
 
-		&:nth-child(odd)
+		&:nth-child(1)
+			background: #181a18
+
+		&.odd
 			background: #181a18
 
 	&__track-title
@@ -182,7 +185,7 @@
 			display: block
 			border-radius: 3px
 
-	&__qa
+	&__link
 		position: absolute
 		align-items: center
 		padding: 0 8px
@@ -216,6 +219,71 @@
 			fill: #fff
 			margin: 0 0 0 2px
 			transition: all ease .2s
+
+		.icon-cam
+			margin: 0 5px 0 auto
+
+		&.room
+			justify-content: flex-start
+			border: none
+			padding: 4px
+			font-weight: 400
+
+			.time-track__pic
+
+			&:hover
+				color: #fff
+
+				&:after
+					opacity: 1
+
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+				border-radius: 5px
+				background: var(--bgColor)
+				transition: all ease 0.2s
+				opacity: 0.1
+				z-index: -1
+			
+		&.discussion
+			justify-content: flex-start
+			border-color: var(--bgColor)
+			padding: 2px
+			font-weight: 400
+			background: transparent
+
+			.time-track__pic
+
+			.time-track__speaker
+				font-size: 16px
+
+			&:hover
+				color: #fff
+
+				.icon-cam
+					fill: #fff
+
+				&:after
+					opacity: 0.5
+					background: var(--bgColor)
+
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+				border-radius: 2px
+				background: transparent
+				transition: all ease 0.2s
+				opacity: 0.1
+				z-index: -1
 
 	&__speaker
 		font-size: 14px
