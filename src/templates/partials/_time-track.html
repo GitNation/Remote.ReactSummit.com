@@ -85,14 +85,14 @@
 						<div class="time-track__track {% if item.odd %}odd{% endif %}">
 
 							{% for talk in item.list %}
-
+                {% set trackCode = "track-" + loop.index %}
 								{% if talk.qaLink %}
 
 									{% if fakeLinks %}
 									<a href="qa-link" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
 									{% else %}
-									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-{{ loop.index }}" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
-                  {{ mixins.roomPopup({ id: "popup-" + loop.index, time: talk.time}, talk) }}
+									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+                  {{ mixins.roomPopup({ id: trackCode + "-" + loop.index, time: talk.time, name: item.list.title}, talk) }}
 
 									{% endif %}
 
@@ -176,13 +176,14 @@
 						<div class="time-track__track {% if item.odd %}odd{% endif %}">
 
 							{% for talk in item.list %}
-
+                {% set trackCode = "extra-track-" + loop.index %}
 								{% if talk.qaLink %}
 
 									{% if fakeLinks %}
 									<a href="qa-link" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
 									{% else %}
-									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+                  {{ mixins.roomPopup({ id: trackCode + "-" + loop.index, time: talk.time, name: item.list.title}, talk) }}
 									{% endif %}
 
 								{% elif talk.speakerRoomLink %}
