@@ -4,7 +4,12 @@
 			{% for item in pages[pageKey].pageSections.scheduleExtends %}
 			<div href="#" class="live-programm__tab js-tab-link {% if item.active %}is-active{% endif %}" data-tab="{{loop.index}}">
 				{{item.title}}
-				<a href="{{item.slackLink}}" class="live-programm__tab-link">{{mixins.icon('sl')}} Slack<span> channel</span></a>
+
+				{% if fakeLinks %}
+					<a href="slack-channel-link" data-fancybox data-src="#popup-ticket" class="live-programm__tab-link">{{mixins.icon('sl')}} Slack<span> channel</span></a>
+				{% else %}
+					<a href="{{item.slackLink}}" class="live-programm__tab-link">{{mixins.icon('sl')}} Slack<span> channel</span></a>
+				{% endif %}
 			</div>
 			{% endfor %}
 		</div>
@@ -13,8 +18,13 @@
 	<div class="container">
 		{% for item in pages[pageKey].pageSections.scheduleExtends %}
 		<div class="broadcast js-tab {% if item.active %}is-active{% endif %}" data-tab="{{loop.index}}">
-			
-			{{ item.broadcast }}
+			<div class="broadcast__content">
+				{% if fakeLinks %}
+					{{ item.broadcast | safe }}
+				{% else %}
+					{{ item.broadcastRegistered | safe }}
+				{% endif %}
+			</div>
 		</div>
 		{% endfor %}
 	</div>
