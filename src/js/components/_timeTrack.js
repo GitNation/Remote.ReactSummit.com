@@ -156,7 +156,9 @@ function putEventsToTimeline() {
     if (isAuth) {
       const srcId = event.dataset.src;
       const timeSpan = event.parentElement.querySelector(`span[data-time-id="${srcId}"]`);
-      timeSpan.innerText = localTimeOf(event.dataset.time);
+      const timeOfStarting = localTimeOf(event.dataset.time)
+      timeSpan.innerText = timeOfStarting;
+      event.dataset.localStartingTime = timeOfStarting;
     }
   });
 }
