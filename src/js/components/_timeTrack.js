@@ -154,7 +154,9 @@ function putEventsToTimeline() {
 
     const isAuth = event.dataset.auth === 'auth';
     if (isAuth) {
-      console.log(event);
+      const srcId = event.dataset.src;
+      const timeSpan = event.parentElement.querySelector(`span[data-time-id="${srcId}"]`);
+      timeSpan.innerText = localTimeOf(event.dataset.time);
     }
   });
 }
