@@ -90,9 +90,9 @@
 								{% if talk.qaLink %}
 
 									{% if fakeLinks %}
-									<a href="qa-link" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+									<a href="qa-link" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">Q&A {{mixins.icon('sl')}}</a>
 									{% else %}
-									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth"  class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth"  class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">Q&A {{mixins.icon('sl')}}</a>
                   {{ mixins.roomPopup({ id: trackCode + "-" + loop.index, time: talk.time, name: item.list.title}, talk) }}
 
 									{% endif %}
@@ -100,7 +100,7 @@
 								{% elif talk.speakerRoomLink %}
 
 									{% if fakeLinks %}
-									<a href="speakerRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}">
+									<a href="speakerRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
@@ -109,7 +109,7 @@
 										<div class="time-track__speaker">{{ talk.title }}</div>
 									</a>
 									{% else %}
-									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}">
+									<a href="{{ talk.speakerRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
@@ -123,7 +123,7 @@
 								{% elif talk.discussionRoomLink %}
 
 									{% if fakeLinks %}
-									<a href="discussionRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link discussion js-time" style="--bgColor: {{ talk.bgColor }}">
+									<a href="discussionRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link discussion js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
@@ -133,7 +133,7 @@
 										{{mixins.icon('cam')}}
 									</a>
 									{% else %}
-									<a href="{{ talk.discussionRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth"  class="time-track__link discussion js-time" style="--bgColor: {{ talk.bgColor }}">
+									<a href="{{ talk.discussionRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth"  class="time-track__link discussion js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
@@ -200,16 +200,16 @@
 								{% if talk.qaLink %}
 
 									{% if fakeLinks %}
-									<a href="qa-link" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+									<a href="qa-link" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">Q&A {{mixins.icon('sl')}}</a>
 									{% else %}
-									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}">Q&A {{mixins.icon('sl')}}</a>
+									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">Q&A {{mixins.icon('sl')}}</a>
                   {{ mixins.roomPopup({ id: trackCode + "-" + loop.index, time: talk.time, name: item.list.title}, talk) }}
 									{% endif %}
 
 								{% elif talk.speakerRoomLink %}
 
 									{% if fakeLinks %}
-									<a href="speakerRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}">
+									<a href="speakerRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
@@ -218,7 +218,7 @@
 										<div class="time-track__speaker">{{ talk.title }}</div>
 									</a>
 									{% else %}
-									<a href="{{ talk.qaLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}">  
+									<a href="{{ talk.speakerRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
@@ -232,7 +232,7 @@
 								{% elif talk.discussionRoomLink %}
 
 									{% if fakeLinks %}
-									<a href="discussionRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link discussion js-time" style="--bgColor: {{ talk.bgColor }}">
+									<a href="discussionRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link discussion js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
@@ -242,7 +242,7 @@
 										{{mixins.icon('cam')}}
 									</a>
 									{% else %}
-									<a href="{{ talk.discussionRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link discussion js-time" style="--bgColor: {{ talk.bgColor }}">
+									<a href="{{ talk.discussionRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link discussion js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
