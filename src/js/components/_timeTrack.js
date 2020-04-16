@@ -194,6 +194,15 @@ function LiveTimeLine() {
   setInterval(updateTime, 5000);
 }
 
+function scrollTrackToView() {
+  const leftStr = trackCurrentTime.style.left;
+  console.log('scrollTrackToView -> timePx', leftStr);
+  const leftVal = parseInt(leftStr.replace('px', ''), 0);
+  const track = document.querySelector('.time-track__content');
+  track.scrollTo(leftVal - 200, 0);
+}
+
 createHeadTimeline();
 putEventsToTimeline();
 LiveTimeLine();
+scrollTrackToView();
