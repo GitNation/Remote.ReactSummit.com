@@ -44,35 +44,35 @@
 		position: relative
 		z-index: 1
 
-		&::-webkit-scrollbar 
+		&::-webkit-scrollbar
 			width: 4px
 			height: 4px
 			cursor: pointer
 
-		&::-webkit-scrollbar-button 
+		&::-webkit-scrollbar-button
 			width: 0px
 			height: 0px
 
-		&::-webkit-scrollbar-thumb 
+		&::-webkit-scrollbar-thumb
 			background: #090a09
 			border: 0px none #ffffff
 			border-radius: 0
 
-		&::-webkit-scrollbar-thumb:hover 
+		&::-webkit-scrollbar-thumb:hover
 			background: #666666
 
-		&::-webkit-scrollbar-thumb:active 
+		&::-webkit-scrollbar-thumb:active
 			background: #666666
 
-		&::-webkit-scrollbar-track 
+		&::-webkit-scrollbar-track
 			background: #212424
 			border: 0px none #ffffff
 			border-radius: 50px
 
-		&::-webkit-scrollbar-track:hover 
+		&::-webkit-scrollbar-track:hover
 			background: #ffffff
 
-		&::-webkit-scrollbar-track:active 
+		&::-webkit-scrollbar-track:active
 			background: #ffffff
 
 		&::-webkit-scrollbar-corner
@@ -162,8 +162,9 @@
 			opacity: 0.1
 			border-radius: 5px
 			z-index: -1
-		
+
 		&:hover
+			z-index: 10
 			.track-tooltip
 				opacity: 1
 				visibility: visible
