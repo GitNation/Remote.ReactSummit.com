@@ -5,9 +5,13 @@
 
 		<div class="video-rooms">
 			{% for item in pages[pageKey].pageSections.videoRooms %}
-			<div class="video-rooms__item {% if item.link %}hoverable{% endif %}">
-				{% if item.link %}
+			<div class="video-rooms__item {% if item.link or fakeLinks %}hoverable{% endif %}">
+				{% if fakeLinks %}
+				<a class="video-rooms__link" href="video-room-link" data-fancybox data-src="#popup-ticket"></a>
+				{% elif item.link %}
 				<a class="video-rooms__link" href="{{ item.link }}"></a>
+				{% else  %}
+				
 				{% endif %}
 				
 				<div class="video-rooms__img-wrap">

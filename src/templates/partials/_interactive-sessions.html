@@ -12,9 +12,13 @@
 				{% if feature.links %}
 				<div class="features-block__links">
 					{% for link in feature.links %}
-					{% if link.link %}
-					<a class="features-block__link" href="{{link.link}}">{{link.name}}</a><br/>
-					{% endif %}
+						{% if link.link %}
+							{% if fakeLinks %}
+							<a class="features-block__link" href="link-to-booking" data-fancybox data-src="#popup-ticket">{{link.name}}</a><br/>
+							{% else %}
+							<a class="features-block__link" href="{{link.link}}">{{link.name}}</a><br/>
+							{% endif %}
+						{% endif %}
 					{% endfor %}
 				</div>
 				{% endif %}
