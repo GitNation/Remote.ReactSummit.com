@@ -2,7 +2,6 @@ const tabLink = $('.js-tab-link');
 const tabClose = $('.js-tab-close');
 
 tabLink.on('click', function(e) {
-  e.stopPropagation();
   if ($(this).hasClass('is-active')) {
     return;
   } else {

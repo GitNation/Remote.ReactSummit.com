@@ -6,9 +6,9 @@
 				{{item.title}}
 
 				{% if fakeLinks %}
-					<a href="slack-channel-link" data-fancybox data-src="#popup-ticket" class="live-programm__tab-link">{{mixins.icon('sl')}} Slack<span> channel</span></a>
+					<a href="slack-channel-link" class="live-programm__tab-link" data-fancybox data-src="#popup-ticket">{{mixins.icon('sl')}} Slack<span> channel</span></a>
 				{% else %}
-					<a href="{{item.slackLink}}" class="live-programm__tab-link">{{mixins.icon('sl')}} Slack<span> channel</span></a>
+					<a href="{{item.slackLink}}" class="live-programm__tab-link" target="blank_">{{mixins.icon('sl')}} Slack<span> channel</span></a>
 				{% endif %}
 			</div>
 			{% endfor %}
