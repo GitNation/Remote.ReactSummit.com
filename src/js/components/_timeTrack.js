@@ -51,7 +51,8 @@ var trackStepInMin = 5;
 var pxPerMinute = 50 / trackStepInMin;
 var startTimeInMin = timeToMinutes(startTime);
 var endTimeInMin = timeToMinutes(endTime);
-var confDurationInMin = endTimeInMin - startTimeInMin;
+var confDurationInMin = minutesDiff(startTimeInMin, endTimeInMin);
+console.log('confDurationInMin', confDurationInMin);
 var confDurationInHours = confDurationInMin / 60;
 var timelineWidth = confDurationInMin * pxPerMinute;
 
@@ -69,6 +70,11 @@ function timeToMinutes(time) {
   var a = hm.split(':');
   var minutes = +a[0] * 60 + +a[1];
   return minutes;
+}
+
+function minutesDiff(m1, m2) {
+  const diff = m2 - m1;
+  return diff > 0 ? diff : 1440 + diff;
 }
 
 function leadingZero(n) {
@@ -89,13 +95,16 @@ function getTime() {
 
 function setTimeLinePosition(tm) {
   var minutes = timeToMinutes(tm);
+  var currentSeconds = new Date().getSeconds() / 60;
   var minutesUpdated;
-  minutesUpdated = minutes - startTimeInMin;
-  trackCurrentTime.style.left = minutesUpdated * pxPerMinute + 26 + 'px';
+  minutesUpdated = minutes + currentSeconds - startTimeInMin;
+  const left = minutesUpdated * pxPerMinute + 26 + 'px';
+  console.log('setTimeLinePosition -> minutes', {minutes, startTimeInMin, minutesUpdated, left});
+  trackCurrentTime.style.left = left;
 
   // hide if conference ended
-  if (minutes > timeToMinutes(endTime)) {
-    trackCurrentTime.style.display = 'none';
+  if (left > 5000) {
+    // trackCurrentTime.style.display = 'none';
   }
 }
 
@@ -177,7 +186,7 @@ function LiveTimeLine() {
     setTimeLinePosition(currentTime);
   };
   updateTime();
-  setInterval(updateTime, 5000);
+  setInterval(updateTime, 50000);
 }
 
 function scrollTrackToView() {
