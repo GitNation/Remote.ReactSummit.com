@@ -52,7 +52,6 @@ var pxPerMinute = 50 / trackStepInMin;
 var startTimeInMin = timeToMinutes(startTime);
 var endTimeInMin = timeToMinutes(endTime);
 var confDurationInMin = minutesDiff(startTimeInMin, endTimeInMin);
-console.log('confDurationInMin', confDurationInMin);
 var confDurationInHours = confDurationInMin / 60;
 var timelineWidth = confDurationInMin * pxPerMinute;
 
@@ -99,7 +98,6 @@ function setTimeLinePosition(tm) {
   var minutesUpdated;
   minutesUpdated = minutes + currentSeconds - startTimeInMin;
   const left = minutesUpdated * pxPerMinute + 26 + 'px';
-  console.log('setTimeLinePosition -> minutes', {minutes, startTimeInMin, minutesUpdated, left});
   trackCurrentTime.style.left = left;
 
   // hide if conference ended
@@ -131,31 +129,9 @@ function createHeadTimeline() {
 
   trackHead.innerHTML = ticks.join('\n');
   timeline.style.width = timelineWidth + 52 + 'px';
-
-  // Set width of QAs
-  // for(var i=0; i< qaItems.length; i++) {
-  // 	var qaItemDutaion = parseInt(qaItems[i].dataset.qaDuration);
-  //   var qaItemWidth = qaItemDutaion * pxPerMinute;
-  //   qaItems[i].style.width = qaItemWidth + 'px';
-  // }
 }
 
 function putEventsToTimeline() {
-  // Set width and position of talks
-  // for (var i = 0; i < trackItems.length; i++) {
-  //   var minutes;
-  //   var duration;
-  //   var minutesUpdated;
-  //   var itemPosLeft;
-  //   var itemWidth;
-  //   minutes = timeToMinutes(trackItems[i].dataset.time);
-  //   duration = trackItems[i].dataset.duration;
-  //   minutesUpdated = minutes - startTimeInMin;
-  //   itemPosLeft = minutesUpdated * pxPerMinute + 26 + 'px';
-  //   itemWidth = duration * pxPerMinute - 1 + 'px';
-  //   // trackItems[i].style.width = itemWidth;
-  //   // trackItems[i].style.left = itemPosLeft;
-  // }
 
   const shiftInPx = (minutes) => {
     const px = `${minutes * pxPerMinute + 26}px`;
@@ -166,9 +142,6 @@ function putEventsToTimeline() {
   const cestStartMinutes = cestObj.getHours() * 60 + cestObj.getMinutes();
 
   [...trackItems].forEach((event) => {
-    // const timeObj = parseTime(event.dataset.time);
-    // const minutes = culcMinutes(timeStr);
-    // console.log('putEventsToTimeline -> minutes', minutes);
 
     const eventObj = parseTime(event.dataset.time);
     const eventMinutes = eventObj.getHours() * 60 + eventObj.getMinutes();
@@ -178,6 +151,11 @@ function putEventsToTimeline() {
     const duration = event.dataset.duration;
     event.style.width = `${duration * pxPerMinute - 1}px`;
     event.style.display = '';
+
+    const isAuth = event.dataset.auth === 'auth';
+    if (isAuth) {
+      console.log(event);
+    }
   });
 }
 
