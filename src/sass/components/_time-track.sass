@@ -162,6 +162,12 @@
 			opacity: 0.1
 			border-radius: 5px
 			z-index: -1
+		
+		&:hover
+			.track-tooltip
+				opacity: 1
+				visibility: visible
+
 
 	&__pic
 		width: 36px
@@ -219,3 +225,33 @@
 		// white-space: nowrap
 		overflow: hidden
 
+
+.track-tooltip
+	position: absolute
+	border: 2px solid var(--bgColor)
+	background: #090a09
+	border-radius: 5px
+	padding: 10px 15px
+	line-height: 1.6
+	width: 500px
+	left: calc(100% + 1px)
+	top: 0
+	z-index: 100
+	visibility: hidden
+	opacity: 0
+	transition: all ease 0.2s
+
+	&__speaker
+		font-size: 14px
+		margin: 0
+
+	&__title
+		font-size: 14px
+		margin: 0
+		margin: 2px 0 0
+
+	&__desc
+		font-size: 12px
+		margin: 0
+		color: #939393
+		margin: 2px 0 0
