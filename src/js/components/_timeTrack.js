@@ -177,6 +177,7 @@ function putEventsToTimeline() {
     event.style.left = shiftInPx(minutes);
     const duration = event.dataset.duration;
     event.style.width = `${duration * pxPerMinute - 1}px`;
+    event.style.display = '';
   });
 }
 
@@ -186,7 +187,7 @@ function LiveTimeLine() {
     setTimeLinePosition(currentTime);
   };
   updateTime();
-  setInterval(updateTime, 50000);
+  setInterval(updateTime, 500);
 }
 
 function scrollTrackToView() {
