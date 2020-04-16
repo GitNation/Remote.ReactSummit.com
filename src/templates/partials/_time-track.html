@@ -20,9 +20,33 @@
 		<div class="broadcast js-tab {% if item.active %}is-active{% endif %}" data-tab="{{loop.index}}">
 			<div class="broadcast__content">
 				{% if fakeLinks %}
-					{{ item.broadcast | safe }}
+          {% if item.muted %}
+            {{ item.notification | safe }}
+          {% else %}
+            <iframe
+              src="{{ item.broadcastUrl }}"
+              width="640"
+              height="360"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            >
+            </iframe>
+          {% endif %}
 				{% else %}
-					{{ item.broadcastRegistered | safe }}
+					{% if item.muted %}
+            {{ item.notification | safe }}
+          {% else %}
+            <iframe
+              src="{{ item.broadcastUrlAuth }}"
+              width="640"
+              height="360"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            >
+            </iframe>
+          {% endif %}
 				{% endif %}
 			</div>
 		</div>
