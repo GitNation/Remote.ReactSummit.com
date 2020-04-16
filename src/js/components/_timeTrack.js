@@ -36,11 +36,6 @@ const minutesFrom = (localTimeStart) => {
     const timeObj = parseTime(timeStr);
     const totalMinutes = timeObj.getHours() * 60 + timeObj.getMinutes();
     const minFrom = totalMinutes - startMinutes;
-    console.log(
-      'minutesFrom -> totalMinutes - startMinutes',
-      totalMinutes,
-      startMinutes
-    );
     return minFrom;
   };
 };
@@ -51,11 +46,6 @@ const cestStartTime = '13:00';
 var startTime = localTimeOf(cestStartTime);
 window.startTime = startTime;
 var endTime = localTimeOf('21:30');
-
-window.log = () => {
-  console.log('startTime', startTime);
-  console.log('endTime', endTime);
-};
 
 var trackStepInMin = 5;
 var pxPerMinute = 50 / trackStepInMin;
@@ -159,15 +149,12 @@ function putEventsToTimeline() {
   // }
 
   const shiftInPx = (minutes) => {
-    const px = `${minutes * pxPerMinute}px`;
+    const px = `${minutes * pxPerMinute + 26}px`;
     return px;
   };
 
-  const culcMinutes = minutesFrom(startTime);
-
   const cestObj = parseTime(cestStartTime);
   const cestStartMinutes = cestObj.getHours() * 60 + cestObj.getMinutes();
-  console.log('putEventsToTimeline -> cestStartMinutes', cestStartMinutes);
 
   [...trackItems].forEach((event) => {
     // const timeObj = parseTime(event.dataset.time);
@@ -176,7 +163,6 @@ function putEventsToTimeline() {
 
     const eventObj = parseTime(event.dataset.time);
     const eventMinutes = eventObj.getHours() * 60 + eventObj.getMinutes();
-    console.log('putEventsToTimeline -> eventMinutes', eventMinutes);
     const minutes = eventMinutes - cestStartMinutes;
 
     event.style.left = shiftInPx(minutes);
@@ -196,7 +182,6 @@ function LiveTimeLine() {
 
 function scrollTrackToView() {
   const leftStr = trackCurrentTime.style.left;
-  console.log('scrollTrackToView -> timePx', leftStr);
   const leftVal = parseInt(leftStr.replace('px', ''), 0);
   const track = document.querySelector('.time-track__content');
   track.scrollTo(leftVal - 200, 0);
