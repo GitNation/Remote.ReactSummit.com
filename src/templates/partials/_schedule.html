@@ -29,7 +29,7 @@
 		<div class="schedule__content js-tabs-container">
 			<div class="schedule__tab-links">
 				{% for item in schedule %}
-					<a href="#" class="schedule__tab-link js-tab-link {% if item.active %}is-active{% endif %}" data-tab="{{loop.index}}">{{item.title}}</a>
+					<div class="schedule__tab-link js-tab-link {% if item.active %}is-active{% endif %}" data-tab="{{loop.index}}">{{item.title}}</div>
 				{% endfor %}
 			</div>
 			<div class="schedule__tabs">

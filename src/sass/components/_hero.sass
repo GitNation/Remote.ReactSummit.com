@@ -176,22 +176,30 @@
 			right: 20px
 
 		+md
-			width: 150px
+			display: flex
+			flex-direction: column
+			align-items: center
 			position: relative
 			right: 0
 			margin: 20px auto
 
-	&__partner-img
-		width: 118px
-		display: block
+	&__partners
+		display: flex
 		margin-top: 4px
 
 		+tablet
 			margin-top: 5px
-			width: 150px
+
+	&__partner-img
+		display: block
+
+		&:first-child
+			margin: 0 10px 0 0
 
 		img
-			width: 100%
+			height: 60px
+			width: auto
+
 	&__timer
 		position: absolute
 		padding: 0 4vw
@@ -279,7 +287,6 @@
 
 			&__partner
 				position: relative
-				width: 116px
 				height: auto
 				top: 0
 				right: 0
@@ -291,8 +298,17 @@
 				+md
 					margin: auto 0 auto
 
+					img
+						height: 30px
+
 				+xs
 					display: none
+
+				img
+					height: 50px
+			&__partners
+				+md
+					margin: 0 
 
 
 
@@ -300,16 +316,6 @@
 				+sm
 					display: none
 
-
-			&__partner-img
-
-				+tablet
-					width: 100%
-
-				img
-					width: 100%
-					height: auto
-					display: block
 
 
 
