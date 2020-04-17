@@ -39,7 +39,7 @@ export default function countdown() {
       // If the count down is over, write some text 
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById('countdown').innerHTML = 'LIVE';
+        document.getElementById('countdown').innerHTML = '<div class="live">LIVE<div>';
       }
     }, 1000);
   }
