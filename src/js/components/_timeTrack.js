@@ -196,17 +196,12 @@ function scrollTrackToView() {
   track.scrollTo(leftVal - 200, 0);
 }
 
-function autoScroll() {
-  setInterval(scrollTrackToView, 1000 * 60);
-}
-
 const startTimeline = () => {
   try {
     createHeadTimeline();
     putEventsToTimeline();
     LiveTimeLine();
     scrollTrackToView();
-    autoScroll();
   } catch (err) {}
 };
 
