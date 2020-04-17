@@ -41,7 +41,7 @@ const minutesFrom = (localTimeStart) => {
 
 window.cestToLocal = cestToLocal;
 
-const cestStartTime = '13:00';
+const cestStartTime = '14:30';
 var startTime = localTimeOf(cestStartTime);
 window.startTime = startTime;
 var endTime = localTimeOf('21:30');
