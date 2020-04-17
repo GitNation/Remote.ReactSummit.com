@@ -18,9 +18,10 @@
 								<img class="bars-list__photo" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:350,width:350/{{ room.photo }}">
 							</a>
 							{% elif room.link %}
-							<a class="bars-list__room" href="{{ room.link }}">
+							<a class="bars-list__room" data-time="19:40" data-fancybox data-src="#zoom-bars-{{ loop.index }}" data-auth="auth" href="{{ room.link }}">
 								<img class="bars-list__photo" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:350,width:350/{{ room.photo }}">
 							</a>
+              {{ mixins.roomPopup({ id: "zoom-bars-" + loop.index, time: "19:40 CEST", name: "Zoom Bars"}, { speaker: "Zoom Bars"}) }}
 							{% else %}
 							<div class="bars-list__room">
 								<img class="bars-list__photo" src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:350,width:350/{{ room.photo }}">
