@@ -44,35 +44,35 @@
 		position: relative
 		z-index: 1
 
-		&::-webkit-scrollbar 
+		&::-webkit-scrollbar
 			width: 4px
 			height: 4px
 			cursor: pointer
 
-		&::-webkit-scrollbar-button 
+		&::-webkit-scrollbar-button
 			width: 0px
 			height: 0px
 
-		&::-webkit-scrollbar-thumb 
+		&::-webkit-scrollbar-thumb
 			background: #090a09
 			border: 0px none #ffffff
 			border-radius: 0
 
-		&::-webkit-scrollbar-thumb:hover 
+		&::-webkit-scrollbar-thumb:hover
 			background: #666666
 
-		&::-webkit-scrollbar-thumb:active 
+		&::-webkit-scrollbar-thumb:active
 			background: #666666
 
-		&::-webkit-scrollbar-track 
+		&::-webkit-scrollbar-track
 			background: #212424
 			border: 0px none #ffffff
 			border-radius: 50px
 
-		&::-webkit-scrollbar-track:hover 
+		&::-webkit-scrollbar-track:hover
 			background: #ffffff
 
-		&::-webkit-scrollbar-track:active 
+		&::-webkit-scrollbar-track:active
 			background: #ffffff
 
 		&::-webkit-scrollbar-corner
@@ -129,7 +129,10 @@
 		align-items: center
 		min-height: 64px
 
-		&:nth-child(odd)
+		&:nth-child(1)
+			background: #181a18
+
+		&.odd
 			background: #181a18
 
 	&__track-title
@@ -163,6 +166,15 @@
 			border-radius: 5px
 			z-index: -1
 
+		&:hover
+			z-index: 10
+
+			.track-tooltip
+				opacity: 1
+				visibility: visible
+				display: block
+
+
 	&__pic
 		width: 36px
 		height: 36px
@@ -175,7 +187,7 @@
 			display: block
 			border-radius: 3px
 
-	&__qa
+	&__link
 		position: absolute
 		align-items: center
 		padding: 0 8px
@@ -196,6 +208,7 @@
 		font-weight: 500
 		transition: all ease .2s
 		justify-content: center
+		cursor: pointer
 
 		&:hover
 			background: var(--bgColor)
@@ -210,6 +223,71 @@
 			margin: 0 0 0 2px
 			transition: all ease .2s
 
+		.icon-cam
+			margin: 0 10px 0 auto
+
+		&.room
+			justify-content: flex-start
+			border: none
+			padding: 4px
+			font-weight: 400
+
+			.time-track__pic
+
+			&:hover
+				color: #fff
+
+				&:after
+					opacity: 1
+
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+				border-radius: 5px
+				background: var(--bgColor)
+				transition: all ease 0.2s
+				opacity: 0.1
+				z-index: -1
+			
+		&.discussion
+			justify-content: flex-start
+			border-color: var(--bgColor)
+			padding: 2px
+			font-weight: 400
+			background: transparent
+
+			.time-track__pic
+
+			.time-track__speaker
+				font-size: 16px
+
+			&:hover
+				color: #fff
+
+				.icon-cam
+					fill: #fff
+
+				&:after
+					opacity: 0.5
+					background: var(--bgColor)
+
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+				border-radius: 2px
+				background: transparent
+				transition: all ease 0.2s
+				opacity: 0.1
+				z-index: -1
+
 	&__speaker
 		font-size: 14px
 		max-height: 32px
@@ -219,3 +297,68 @@
 		// white-space: nowrap
 		overflow: hidden
 
+.broadcast
+	position: relative
+
+	&__content
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+
+		iframe
+			display: flex
+			width: 100%
+			height: 100%
+			background: #000
+
+.broadcats-text
+	position: absolute
+	color: #fff
+	display: flex
+	width: 100%
+	height: 100%
+	font-size: 6vw
+	align-items: center
+	justify-content: center
+	text-align: center
+	font-weight: 700
+	color: #2d2d2d
+
+.track-tooltip
+	display: none
+	position: absolute
+	border: 2px solid var(--bgColor)
+	background: #090a09
+	border-radius: 5px
+	padding: 10px 15px
+	line-height: 1.6
+	width: 500px
+	left: calc(100% + 1px)
+	top: 0
+	z-index: 100
+	visibility: hidden
+	opacity: 0
+	transition: all ease 0.2s
+
+	&__speaker
+		font-size: 14px
+		margin: 0
+
+	&__title
+		font-size: 14px
+		margin: 0
+		margin: 2px 0 0
+
+	&__sec
+		margin: 10px 0 0
+
+	&__desc
+		font-size: 12px
+		margin: 0
+		color: #939393
+		margin: 2px 0 0
+
+		a
+			color: #fff
