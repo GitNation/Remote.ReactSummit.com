@@ -32,8 +32,7 @@ const minutesFrom = (localTimeStart) => {
   const startTimeObj = parseTime(localTimeStart);
   const startMinutes = startTimeObj.getHours() * 60 + startTimeObj.getMinutes();
   return (timeString) => {
-    const timeStr = localTimeOf(timeString);
-    const timeObj = parseTime(timeStr);
+    const timeObj = parseTime(timeString);
     const totalMinutes = timeObj.getHours() * 60 + timeObj.getMinutes();
     const minFrom = totalMinutes - startMinutes;
     return minFrom;
@@ -163,13 +162,31 @@ function putEventsToTimeline() {
   });
 }
 
+function enableEventsLinksByLocalTime(currentTime) {
+  // const currentObj = parseTime(currentTime);
+  const calcDiff = minutesFrom(currentTime);
+
+  [...trackItems].forEach((event) => {
+    const enablingTime = event.dataset.localStartingTime;
+    if (!enablingTime) {
+      return;
+    }
+    // const enablingObj = parseTime(enablingTime);
+    const minutesDiff = calcDiff(enablingTime);
+    if (minutesDiff <= 0) {
+      event.removeAttribute('data-fancybox');
+    }
+  });
+}
+
 function LiveTimeLine() {
   const updateTime = () => {
     const currentTime = getTime();
     setTimeLinePosition(currentTime);
+    enableEventsLinksByLocalTime(currentTime);
   };
   updateTime();
-  setInterval(updateTime, 500);
+  setInterval(updateTime, 1000);
 }
 
 function scrollTrackToView() {
