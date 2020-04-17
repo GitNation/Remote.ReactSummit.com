@@ -108,7 +108,7 @@
 
 
 {% macro roomPopup(data, talk) %}
-<div class="pop-ticket" id="{{ data.id }}">
+<div class="pop-ticket alert" id="{{ data.id }}">
 	<div class="pop-ticket__two-col">
 		<div class="pop-ticket__left">
 			<p class="pop-ticket__title">Activity starts at <span class="pop-activity-value" data-time-id="#{{ data.id }}">{{ data.time }}</span>. Please, click me later.</p>
@@ -116,9 +116,9 @@
 
 		<div class="pop-ticket__right">
       {% if talk.speaker %}
-      <div class="time-track__speaker">{{ talk.speaker }}</div>
+      <div class="pop-ticket__title">{{ talk.speaker }}</div>
       {% else %}
-      <div class="time-track__speaker">{{ talk.title }}</div>
+      <div class="pop-ticket__title">{{ talk.title }}</div>
       {% endif %}
 
       {% if talk.text %}
