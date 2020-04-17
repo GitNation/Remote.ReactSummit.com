@@ -41,7 +41,7 @@ const minutesFrom = (localTimeStart) => {
 
 window.cestToLocal = cestToLocal;
 
-const cestStartTime = '13:00';
+const cestStartTime = '14:30';
 var startTime = localTimeOf(cestStartTime);
 window.startTime = startTime;
 var endTime = localTimeOf('21:30');
@@ -131,7 +131,6 @@ function createHeadTimeline() {
 }
 
 function putEventsToTimeline() {
-
   const shiftInPx = (minutes) => {
     const px = `${minutes * pxPerMinute + 26}px`;
     return px;
@@ -141,7 +140,6 @@ function putEventsToTimeline() {
   const cestStartMinutes = cestObj.getHours() * 60 + cestObj.getMinutes();
 
   [...trackItems].forEach((event) => {
-
     const eventObj = parseTime(event.dataset.time);
     const eventMinutes = eventObj.getHours() * 60 + eventObj.getMinutes();
     const minutes = eventMinutes - cestStartMinutes;
@@ -154,7 +152,9 @@ function putEventsToTimeline() {
     const isAuth = event.dataset.auth === 'auth';
     if (isAuth) {
       const srcId = event.dataset.src;
-      const timeSpan = event.parentElement.querySelector(`span[data-time-id="${srcId}"]`);
+      const timeSpan = event.parentElement.querySelector(
+        `span[data-time-id="${srcId}"]`
+      );
       const timeOfStarting = localTimeOf(event.dataset.time);
       timeSpan.innerText = timeOfStarting;
       event.dataset.localStartingTime = timeOfStarting;
@@ -196,7 +196,13 @@ function scrollTrackToView() {
   track.scrollTo(leftVal - 200, 0);
 }
 
-createHeadTimeline();
-putEventsToTimeline();
-LiveTimeLine();
-scrollTrackToView();
+const startTimeline = () => {
+  try {
+    createHeadTimeline();
+    putEventsToTimeline();
+    LiveTimeLine();
+    scrollTrackToView();
+  } catch (err) {}
+};
+
+startTimeline();
