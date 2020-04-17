@@ -67,7 +67,7 @@ export default function countdown() {
       // If the count down is over, write some text
       if (isLive) {
         clearInterval(x);
-        countdownContainer.innerHTML = 'LIVE';
+        countdownContainer.innerHTML = '<div class="live">LIVE<div>';
       } else {
         // Output the result in an element with id="demo"
         countdownContainer.innerHTML = diffStr;
