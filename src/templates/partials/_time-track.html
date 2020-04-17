@@ -100,7 +100,7 @@
 								{% elif talk.speakerRoomLink %}
 
 									{% if fakeLinks %}
-									<a href="speakerRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link room active js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
+									<a href="speakerRoomLink" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#popup-ticket" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
@@ -108,18 +108,8 @@
 										{% endif %}
 										<div class="time-track__speaker">{{ talk.title }}</div>
 									</a>
-									{% elif talk.noTimeCheck %}
-									<a href="{{ talk.speakerRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" class="time-track__link room active js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
-										{% if talk.pic %}
-											<div class="time-track__pic">
-												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
-											</div>
-										{% endif %}
-										<div class="time-track__speaker">{{ talk.title }}</div>
-									</a>
-
 									{% else %}
-									<a href="{{ talk.speakerRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link room active js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
+									<a href="{{ talk.speakerRoomLink }}" data-time="{{ talk.time }}" data-duration="{{ talk.duration }}" data-fancybox data-src="#{{ trackCode }}-{{ loop.index }}" data-auth="auth" class="time-track__link room js-time" style="--bgColor: {{ talk.bgColor }}; display: none;">
 										{% if talk.pic %}
 											<div class="time-track__pic">
 												<img src="https://media.graphcms.com/output=format:jpg/resize=fit:crop,height:72,width:72/{{ talk.pic }}">
