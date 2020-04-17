@@ -12,6 +12,9 @@
 		display: flex
 		justify-content: flex-end
 		background-color: transparent
+	+md
+		pointer-events: none
+
 	&__nav
 		+md
 			width: 100%
@@ -77,12 +80,18 @@
 				opacity: 1
 				visibility: visible
 				z-index: 1
+
+		&.is-open
+			+md
+				pointer-events: auto
+
 	&__burger
 		display: none
 		position: relative
 		z-index: 2
 		+md
 			display: inline-block
+			pointer-events: auto
 
 .nav
 	display: flex
@@ -100,9 +109,14 @@
 		display: flex
 		padding: 0 13px
 		align-items: center
+		justify-content: center
+
+		&:hover
+			color: #9dde00
+			
 		+md
 			font-size: 14px
-			display: block
+			display: flex
 			text-align: center
 			padding: 10px 20px
 			font-weight: 500
