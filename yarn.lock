@@ -951,10 +951,15 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@fancyapps/fancybox@^3.5.7":
+  version "3.5.7"
+  resolved "https://registry.yarnpkg.com/@fancyapps/fancybox/-/fancybox-3.5.7.tgz#12f8734663ec6eae7f9236b92ca236e6e07fdfd5"
+  integrity sha512-rcEtu8t+WnmqIDV/Wfm1yvy/nDdwc7YV25j9HLxGC2/WOsUhk9rcWg2nB8g1BrjRt9zaoADdjHTU6ILYTJzBBg==
+
 "@focus-reactive/graphql-content-layer@2.1.3":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@focus-reactive/graphql-content-layer/-/graphql-content-layer-2.1.2.tgz#3bc647b2fa4205ec749775192ed60a83348bc107"
-  integrity sha512-W2wK+q3m12U39gPFD2vqHIC4ZVZ2TRs1Fv7WnSsRuLwTR3L62heQYJQBNmxxPP3SGLmcZD5NMJfPVFjF/mfTKQ==
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@focus-reactive/graphql-content-layer/-/graphql-content-layer-2.1.3.tgz#295c4fa9ed803554f33e9e6adc59ee025b74618f"
+  integrity sha512-1c1FAuvyivF9N4mXIyfvf2zQVpnJp8XOqbQwK4WFyZ3Y8oC4t0S+xd8uHJqvh54nZ3a/jJkVDUg4RghZX0qR7g==
   dependencies:
     "@focus-reactive/storybook-addon-graphcms" "^1.3.0"
     "@react-theming/storybook-addon" "^0.2.1"
