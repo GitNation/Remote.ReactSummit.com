@@ -41,10 +41,10 @@ const minutesFrom = (localTimeStart) => {
 
 window.cestToLocal = cestToLocal;
 
-const cestStartTime = '14:30';
+const cestStartTime = '15:00';
 var startTime = localTimeOf(cestStartTime);
 window.startTime = startTime;
-var endTime = localTimeOf('21:30');
+var endTime = localTimeOf('20:30');
 
 var trackStepInMin = 5;
 var pxPerMinute = 50 / trackStepInMin;
@@ -200,8 +200,8 @@ const startTimeline = () => {
   try {
     createHeadTimeline();
     putEventsToTimeline();
-    LiveTimeLine();
-    scrollTrackToView();
+    // LiveTimeLine();
+    // scrollTrackToView();
   } catch (err) {}
 };
 
