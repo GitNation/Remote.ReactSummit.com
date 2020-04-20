@@ -25,6 +25,14 @@ sponsorsDescription: true
 			{% include "partials/_speakers.html" %}
 		{% endif %}
 
+    {% if pages[pageKey].pageSections.advicers %}
+			{% include "partials/_advicers.html" %}
+		{% endif %}
+
+		{% if pages[pageKey].pageSections.MCs %}
+			{% include "partials/_MCs.html" %}
+		{% endif %}
+
 		{% if pages[pageKey].pageSections.fullTicket %}
 			{% include "partials/_full-ticket.html" %}
 		{% endif %}
