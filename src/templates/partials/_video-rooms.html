@@ -9,12 +9,11 @@
 				{% if fakeLinks %}
 				<a class="video-rooms__link" href="video-room-link" data-fancybox data-src="#popup-ticket"></a>
 				{% elif item.link %}
-				<a class="video-rooms__link" data-time="16:10" data-fancybox data-src="#video-room-{{ loop.index }}" data-auth="auth" href="{{ item.link }}"></a>
+				<a class="video-rooms__link" href="{{ item.link }}"></a>
 				{% else  %}
-
+				
 				{% endif %}
-        {{ mixins.roomPopup({ id: "video-room-" + loop.index, time: "16:10", name: "Discussion Rooms"}, { speaker: "Discussion Rooms"}) }}
-
+				
 				<div class="video-rooms__img-wrap">
 					<img class="video-rooms__img" src="{{ item.pic }}">
 				</div>

@@ -6,8 +6,7 @@
 		{% if fakeLinks %}
 		<a class="btn btn--border info-block__btn" href="quakejs-tournament" data-fancybox data-src="#popup-ticket">Join tournament</a>
 		{% elif pagesPieceOfTexts.QuakeJS__link %}
-		<a class="btn btn--border info-block__btn" data-time="19:40" data-fancybox data-src="#quake-popup" data-auth="auth" href="{{ pagesPieceOfTexts.QuakeJS__link }}">Join tournament</a>
-    {{ mixins.roomPopup({ id: "quake-popup", time: "19:40 CEST", name: "QuakeJS Tournament"}, { speaker: "QuakeJS Tournament"}) }}
+		<a class="btn btn--border info-block__btn" href="{{ pagesPieceOfTexts.QuakeJS__link }}">Join tournament</a>
 		{% else %}
 		<a class="btn btn--border info-block__btn" href="{{ pagesPieceOfTexts.QuakeJS__link }}">Check later</a>
 		{% endif %}
