@@ -38,7 +38,7 @@ if ($('.js-slider')) {
 }
 
 fancypop();
-countdown();
+// countdown();
 
 highlightContent({ contentTypeMap });
 
