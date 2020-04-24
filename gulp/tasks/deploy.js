@@ -17,7 +17,7 @@ gulp.task('deploy', function() {
     parallel: 2,
   });
 
-  gulp.src(['./build/css/app0bc7cd.css']).pipe(conn.dest('/css'));
+  gulp.src(['./build/css/appe2c31e.css']).pipe(conn.dest('/css'));
 
   // // Always deploy HTML
   // gulp.src(['./build/*.*']).pipe(conn.dest(remotePath));
