@@ -2,7 +2,7 @@ const projectId = '8be1ceff148c4b749e78b34007f9cc34';
 const projectStage = 'master';
 
 const createEntryURL = ({ id, contentTypeId }) => {
-  const url = `https://app.graphcms.com/${projectId}/${projectStage}/content/${contentTypeId}/table/${id}`;
+  const url = `https://legacy.graphcms.com/${projectId}/${projectStage}/content/${contentTypeId}/table/${id}`;
   return url;
 };
 
