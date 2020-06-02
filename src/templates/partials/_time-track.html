@@ -19,21 +19,9 @@
 		{% for item in pages[pageKey].pageSections.scheduleExtends %}
 		<div class="broadcast js-tab {% if item.active %}is-active{% endif %}" data-tab="{{loop.index}}">
 			<div class="broadcast__content">
-				{% if fakeLinks %}
-          <p class='broadcats-text'>
-            <a href="liveauth" data-fancybox data-src="#popup-ticket">{{ item.notification }}</a>
-          </p>
-				{% else %}
-          <iframe
-            src="{{ item.broadcastUrlAuth }}"
-            width="640"
-            height="360"
-            frameborder="0"
-            allow="fullscreen"
-            allowfullscreen
-          >
-          </iframe>
-				{% endif %}
+        <p class='broadcats-text'>
+          <a href="https://www.youtube.com/playlist?list=PLNBNS7NRGKMGCBNebw8xkpkq_lhgPoIzR" style="color: #888">Watch talk recordings on YouTube</a>
+        </p>
 			</div>
 		</div>
 		{% endfor %}
