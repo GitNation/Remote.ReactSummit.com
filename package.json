@@ -98,7 +98,7 @@
     "gulp-hash-references": "^3.0.1",
     "js-yaml": "^3.12.1",
     "svg4everybody": "^2.1.9",
-    "swiper": "^4.4.6",
+    "swiper": "^6.5.1",
     "vinyl-ftp": "^0.6.1"
   },
   "relativeDependencies": {
